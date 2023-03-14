@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('partials/head') %>
+
+    <body>
+
+        <%- include('partials/header') %>
+
+            <main class="container">
+                <img src="/img/cartazes/<%= filme.cartaz %>" alt="<%= filme.titulo %>">
+                <aside>
+                    <span class="titulo">
+                        <%= filme.titulo %>
+                    </span>
+                    <span class="duracao">Duração: 110min</span>
+                    <span class="censura">Censura: <%= filme.censura == 0 ? 'Livre' : `${filme.censura} anos` %></span>
+                    <span class="generos">
+                        <%= filme?.generos?.join(', ') %>
+                    </span>
+                    <span class="sinopse">
+                        <%= filme.sinopse %>
+                    </span>
+
+                </aside>
+            </main>
+    </body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<%- include('partials/head') %>
+
+<body>
+
+    <!-- <header>
+        <div class="container">
+            <div id="logo">Filnemateca</div>
+            <form>
+                <input type="search" name="busca" id="busca">
+                <select name="censura">
+                    <option value="0">Livre</option>
+                    <option value="8">Até 8 anos</option>
+                    <option value="10">Até 10 anos</option>
+                    <option value="12">Até 12 anos</option>
+                    <option value="14">Até 14 anos</option>
+                    <option value="16">Até 16 anos</option>
+                    <option value="18">Até 18 anos</option>
+                </select>
+                <button type="submit">Buscar</button>
+            </form>
+        </div>
+    </header> -->
+
+    <%- include('partials/header') %>
+    
+    <link rel="stylesheet" href="/css/index.css">
+
+    <main class="container">
+        <% for(const f of filmes) { %>
+        <article>
+            <img src="/img/cartazes/<%= f.cartaz %>" alt="<%= f.titulo %>">
+            <a href="/filmes/<%= f.id %>">
+                <span class="titulo"><%= f.titulo %></span>
+                <span class="duracao">Censura: <%= f.censura %> Anos</span>
+            </a>
+        </article>
+        <% } %>
+    </main>
+    <footer>
+
+    </footer>
+</body>
+</html>
